@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8f18b3a6-ea61-4554-b2e1-261614b1626c" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="beaf69b4-554e-41e3-a1e9-7e63c5346ea1" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://gateway.marvel.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://gateway.marvel.com</con:endpoint></con:endpoints><con:resource name="Characters" path="/v1/public/characters" id="7f5b7eb7-9f20-48c9-a44a-d56daa919a9c"><con:settings/><con:parameters><con:parameter><con:name>ts</con:name><con:value>1</con:value><con:style>QUERY</con:style><con:default>1</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>hash</con:name><con:value>c309b63ec643df4834433505f560d3c9</con:value><con:style>QUERY</con:style><con:default>c309b63ec643df4834433505f560d3c9</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>apikey</con:name><con:value>8306214236f67107dae99b2c9beb419e</con:value><con:style>QUERY</con:style><con:default>8306214236f67107dae99b2c9beb419e</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>limit</con:name><con:value>1</con:value><con:style>QUERY</con:style><con:default>1</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>offset</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Characters 1" id="072de24b-556d-4032-9bf6-b14a3da1399d" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:char="http://gateway.marvel.com/v1/public/characters">char:Response</con:element></con:representation><con:request name="Request 1" id="ad85001c-2b98-48ef-8be3-7acfb036646d" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://gateway.marvel.com</con:endpoint><con:request/><con:originalUri>http://gateway.marvel.com/v1/public/characters</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="apikey" value="8306214236f67107dae99b2c9beb419e"/>
+  <con:entry key="offset" value="0"/>
+  <con:entry key="limit" value="1"/>
+  <con:entry key="hash" value="c309b63ec643df4834433505f560d3c9"/>
+  <con:entry key="ts" value="1"/>
+</con:parameters><con:parameterOrder><con:entry>ts</con:entry><con:entry>hash</con:entry><con:entry>apikey</con:entry><con:entry>limit</con:entry><con:entry>offset</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="a3d6f322-31f8-480f-8971-450ab26060bb" name="Marvel"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="33df9b57-9c53-4141-a7fb-f273a0a45445" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="MarvelCharacters" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="GetAllMarvelCharacters" id="73115027-18a0-42a9-b24b-c9cf42d6fb02"><con:settings/><con:config service="http://gateway.marvel.com" resourcePath="/v1/public/characters" methodName="Characters 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetAllMarvelCharacters" id="ad85001c-2b98-48ef-8be3-7acfb036646d" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://gateway.marvel.com</con:endpoint><con:request/><con:originalUri>http://gateway.marvel.com/v1/public/characters</con:originalUri><con:assertion type="Simple Contains" id="836e2435-62af-48ee-aa7d-28b1ccc370fd" name="id"><con:configuration><token>id</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="cb802ad7-e2f0-42d4-9453-1ef24b2f5147" name="name"><con:configuration><token>name</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="b4eee9cc-aad9-4d96-aa42-74fa1eda6b25" name="description"><con:configuration><token>description</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="f4e6eb36-3459-424a-8d1d-16d680abae1b" name="modified"><con:configuration><token>modified</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="e40c8e1d-39a1-44f3-a948-331c2d38efaf" name="Script Assertion"><con:configuration><scriptText/></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b59d0e09-763a-4f6f-9c80-767c7fd77aab" name="Script Assertion 1"><con:configuration><scriptText>import groovy.json.JsonSlurper;
+
+def responseMessage = messageExchange.response.responseContent;
+def json = new JsonSlurper().parseText(responseMessage);
+
+
+assert json.code==200
+
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="apikey" value="8306214236f67107dae99b2c9beb419e"/>
+  <con:entry key="offset" value="${#TestCase#offset}}"/>
+  <con:entry key="limit" value="10"/>
+  <con:entry key="hash" value="c309b63ec643df4834433505f560d3c9"/>
+  <con:entry key="ts" value="1"/>
+</con:parameters><con:parameterOrder><con:entry>ts</con:entry><con:entry>hash</con:entry><con:entry>apikey</con:entry><con:entry>limit</con:entry><con:entry>offset</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="properties" name="Properties" id="939a5ad9-ce0d-4c02-abf0-d6b1261772ec"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>TestStepProperty</con:name><con:value>Property at Test step level</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="c709123f-c9e2-479e-8374-b531187f17fb"><con:settings/><con:config><script>//Project
+//def projectProperty = context.expand('${#Project#ProjectProperty}');
+//def projectProperty = testRunner.testCase.testSuite.project.getPropertyValue('ProjectProperty');
+//log.info(projectProperty);
+testRunner.testCase.testSuite.project.setPropertyValue('Name','Deepanshu');
+testRunner.testCase.testSuite.project.properties.each {
+	key,value -> 
+	log.info(testRunner.testCase.testSuite.project.getPropertyValue(key));
+}
+testRunner.testCase.testSuite.project.removeProperty('Name');
+
+//Test Suite
+//def suiteProperty = context.expand('${#TestSuite#TestSuiteProperty}');
+//def suiteProperty = testRunner.testCase.testSuite.getPropertyValue('TestSuiteProperty');
+//log.info(suiteProperty);
+////Test Case
+////def testcaseProperty = context.expand('${#TestCase#offset}');
+//def testcaseProperty = testRunner.testCase.getPropertyValue('TestCaseProperty');
+//log.info(testcaseProperty);
+////Test Step
+////def teststepProperty = context.expand('${Properties#TestStepProperty}');
+//def teststepProperty = testRunner.testCase.getTestStepByName('Properties').getPropertyValue('TestStepProperty');
+//log.info(teststepProperty)
+//
+</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script1" id="c6c564c0-35bc-4012-b80c-5f51d805774d"><con:settings/><con:config><script>import groovy.json.JsonSlurper;
+
+def res = testRunner.testCase.getTestStepByName('GetAllMarvelCharacters').getPropertyValue('response');
+
+def json = new JsonSlurper().parseText(res);
+
+def count = json.data.count;
+def limit = json.data.limit
+def offset = json.data.offset
+def counter=0;
+
+while(!(count&lt;limit)) {
+	offset = offset+count;
+	testRunner.testCase.setPropertyValue('offset',offset.toString());
+	testRunner.runTestStepByName('GetAllMarvelCharacters');
+	res = testRunner.testCase.getTestStepByName('GetAllMarvelCharacters').getPropertyValue('response');	
+	json = new JsonSlurper().parseText(res);
+	count = json.data.count;
+	offset = json.data.offset
+	log.info counter;
+	counter++
+}
+
+//def response = testRunner.runTestStepByName('GetAllMarvelCharacters');
+//def status = response.getStatus().toString();
+//log.info(status);
+//log.info(response.toString());
+//
+
+/*
+def testCases = context.testCase.testSuite.getTestCaseList();
+testCases.each {
+	log.info(it.name);
+}
+*/
+/* def testSuite = context.testCase.testSuite.project.testSuites[''];
+ *  testSuite.run(null,false);
+ * 
+ */</script></con:config></con:testStep><con:properties><con:property><con:name>offset</con:name><con:value>1490</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>TestSuiteProperty</con:name><con:value>Property at Suite level</con:value></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>ProjectProperty</con:name><con:value>Property at Project</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
